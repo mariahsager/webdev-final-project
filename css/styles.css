@@ -1,0 +1,202 @@
+/* -----------------------------
+   Global pink theme and layout
+   ----------------------------- */
+:root {
+  --pink-50: #fff5f9;
+  --pink-100: #ffeef6;
+  --pink-200: #ffd6e7;
+  --pink-400: #ff7ab8;
+  --pink-500: #ff4da6;
+  --pink-600: #e04393;
+  --muted: #6b4351;
+  --card-bg: rgba(255, 255, 255, 0.6);
+}
+
+/* Fonts */
+@font-face {
+  font-family: "Vulf Sans";
+  src: url("../assets/fonts/Vulf Sans/VulfSansDemo-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vulf Sans";
+  src: url("../assets/fonts/Vulf Sans/VulfSansDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Vulf Mono";
+  src: url("../assets/fonts/Vulf Mono/VulfMonoDemo-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Viktor Script";
+  src: url("../assets/fonts/Viktor Script/ViktorScriptDemo-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Ohno Softie";
+  src: url("../assets/fonts/Ohno Softie/OhnoSoftieDemo-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Degular";
+  src: url("../assets/fonts/Degular/DegularDemo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Obviously Regular";
+  src: url("../assets/fonts/Obviously Normal/ObviouslyDemo-Regular.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Obviously Narrow";
+  src: url("../assets/fonts/Obviously Narrow/ObviouslyDemo-Narrow.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Obviously Condensed";
+  src: url("../assets/fonts/Obviously Condensed/ObviouslyDemo-Condensed.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Global styles */
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: "Degular", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #3b2b35;
+  background: linear-gradient(
+    180deg,
+    var(--pink-50) 0%,
+    var(--pink-100) 40%,
+    #fff 100%
+  );
+}
+
+/* Header */
+header {
+  padding: 2.25rem 1rem;
+  text-align: center;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.6),
+    rgba(255, 255, 255, 0.4)
+  );
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 30px rgba(255, 77, 166, 0.06);
+}
+
+header h1 {
+  margin: 0 0 0.35rem 0;
+  color: var(--pink-500);
+  font-weight: 700;
+  font-family: "Viktor Script", "Vulf Sans", Inter, system-ui, -apple-system,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 700;
+  font-size: 5rem;
+  letter-spacing: -0.02em;
+  transition: box-shadow 180ms ease;
+}
+
+header h1:hover {
+  text-shadow: 0 0 6px #fff, 0 0 12px var(--pink-400), 0 0 20px var(--pink-100);
+}
+
+/* Nav */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 0 0;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  font-family: "Degular";
+}
+
+nav a {
+  display: inline-block;
+  text-decoration: none;
+  color: var(--muted);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-weight: 600;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+nav a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(255, 77, 166, 0.12);
+  color: var(--pink-600);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* Page sections */
+section {
+  max-width: 980px;
+  margin: 1.75rem auto;
+  padding: 1.25rem 1.25rem;
+  border-radius: 12px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.75),
+    rgba(255, 255, 255, 0.6)
+  );
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* Headings, etc. */
+
+h2 {
+  color: var(--pink-400);
+  margin-top: 0;
+  font-family: "Obviously Narrow", "Ohno Softie", "Vulf Sans", Inter, system-ui,
+    -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-weight: 400;
+}
+
+p,
+li {
+  color: #4b2f3b;
+  line-height: 1.6;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.25rem 1rem;
+  color: #6b4756;
+}

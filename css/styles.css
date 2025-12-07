@@ -1,6 +1,3 @@
-.vinyl {
-  position: relative;
-}
 /* -----------------------------
    Global pink theme and layout
    ----------------------------- */
@@ -13,6 +10,9 @@
   --pink-600: #e04393;
   --muted: #6b4351;
   --card-bg: rgba(255, 255, 255, 0.6);
+  --vinyl-groove-dark: #2a2928;
+  --vinyl-groove-mid: #706f6e;
+  --vinyl-groove-light: #ada9a0;
 }
 
 /* Fonts */
@@ -262,7 +262,9 @@ body {
     color: #6b4756;
   }
 
-  /* Vinyl styles */
+  /* -----------------------------
+   Vinyl styling
+   ----------------------------- */
 
   .vinyls {
     display: grid;
@@ -282,6 +284,25 @@ body {
     align-items: center;
   }
 
+  .vinyl::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+      var(--vinyl-groove-mid) 0 3px,
+      var(--vinyl-groove-light) 4px,
+      var(--vinyl-groove-dark) 5px
+    );
+    opacity: 0.12;
+    z-index: 1;
+    pointer-events: none;
+  }
+
   .vinyl::after {
     content: "";
     position: absolute;
@@ -292,18 +313,56 @@ body {
     height: 30px;
     background: #fff;
     border-radius: 50%;
+    z-index: 2;
   }
+}
+
+.vinyl:hover img {
+  animation: spin 4s linear infinite;
 }
 
 .vinyl img {
   width: 220px;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border: none;
   display: block;
   border-radius: 50%;
   position: relative;
 }
+
+.vinyl-details {
+  display: none;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -12%);
+  z-index: 10;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.vinyl:hover .vinyl-details {
+  display: block;
+}
+
+.vinyl-details text {
+  fill: #fff;
+  stroke: #000;
+  stroke-width: 2px;
+  paint-order: stroke fill;
+  stroke-linejoin: round;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* -----------------------------
+   Some more stuff
+   ----------------------------- */
 
 /* Slight responsive spacing */
 @media (max-width: 640px) {

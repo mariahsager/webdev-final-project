@@ -13,8 +13,14 @@
 	<div class="container">
 		<div id="vinyls" class="vinyls"></div>
 	</div>
+
 	<script type="module">
 		import { fetchVinylCollection } from './js/discogs.js';
+		import { truncateText } from './js/script.js';
+
+		function truncateText(str, maxLength) {
+			return str.length > maxLength ? str.slice(0, maxLength - 1) + "…" : str;
+		}
 
 		async function renderVinyls() {
 			const vinylsContainer = document.getElementById('vinyls');
@@ -28,10 +34,22 @@
 			vinyls.forEach(vinyl => {
 				const vinylDiv = document.createElement('div');
 				vinylDiv.className = 'vinyl';
-				vinylDiv.innerHTML = `
-					<img src="${vinyl.image || ''}" alt="${vinyl.title}" />
-					
-				`;
+					const truncatedTitle = truncateText(vinyl.title, 19);
+					const truncatedArtist = truncateText(vinyl.artist, 19);
+					const label = `${truncatedTitle} – ${truncatedArtist}`;
+					vinylDiv.innerHTML = `
+						<img src="${vinyl.image || ''}" alt="${vinyl.title}" />
+						<svg class="vinyl-details" width="300" height="160" viewBox="0 0 300 160">
+							<defs>
+								<path id="curve" d="M50,150 A100,100 0 0,1 250,150" />
+							</defs>
+							<text width="300">
+								<textPath href="#curve" startOffset="0%" class="vinyl-title-artist">
+									${label}
+								</textPath>
+							</text>
+						</svg>
+					`;
 				vinylsContainer.appendChild(vinylDiv);
 			});
 		}

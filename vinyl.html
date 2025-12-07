@@ -30,12 +30,7 @@
 				vinylDiv.className = 'vinyl';
 				vinylDiv.innerHTML = `
 					<img src="${vinyl.image || ''}" alt="${vinyl.title}" />
-					<div class="vinyl__details">
-						<h2>${vinyl.title}</h2>
-						<p><strong>Artist:</strong> ${vinyl.artist}</p>
-						<p><strong>Label:</strong> ${vinyl.label}</p>
-						<p><strong>Year:</strong> ${vinyl.year}</p>
-					</div>
+					
 				`;
 				vinylsContainer.appendChild(vinylDiv);
 			});

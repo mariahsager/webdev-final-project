@@ -1,3 +1,4 @@
+
 /* -----------------------------
    Global pink theme and layout
    ----------------------------- */
@@ -56,6 +57,14 @@
   font-display: swap;
 }
 @font-face {
+  font-family: "Ohno Blazeface Demo";
+  src: url("../assets/fonts/untitled folder/OhnoBlazefaceDemo-24Point.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
   font-family: "Degular";
   src: url("../assets/fonts/Degular/DegularDemo-Regular.otf") format("opentype");
   font-weight: 400;
@@ -83,6 +92,14 @@
   font-family: "Obviously Condensed";
   src: url("../assets/fonts/Obviously Condensed/ObviouslyDemo-Condensed.otf")
     format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Degular Display";
+  src: url("../assets/fonts/Degular Display/DegularDisplayDemo-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -220,32 +237,22 @@ body {
 
   /* Headings, etc. */
 
-  h2 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     color: var(--pink-400);
     margin-top: 0;
-    font-family: "Obviously Narrow", "Ohno Softie", "Vulf Sans", Inter,
-      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      sans-serif;
+    font-family: "Ohno Blazeface Demo", "Obviously Narrow", "Ohno Softie",
+      "Vulf Sans", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
     font-weight: 400;
   }
-
   h3 {
-    color: var(--pink-400);
-    margin-top: 0;
-    font-family: "Obviously Narrow", "Ohno Softie", "Vulf Sans", Inter,
-      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      sans-serif;
-    font-weight: 400;
     font-size: 1.5rem;
   }
-
   h4 {
-    color: var(--pink-400);
-    margin-top: 0;
-    font-family: "Obviously Narrow", "Ohno Softie", "Vulf Sans", Inter,
-      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-      sans-serif;
-    font-weight: 400;
     font-size: 1.2rem;
   }
 
@@ -352,6 +359,10 @@ body {
   stroke-linejoin: round;
 }
 
+.vinyl-title-artist {
+  font-family: 'Degular Display', Arial, sans-serif;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -404,4 +415,27 @@ ul li {
 }
 ul li::marker {
   color: var(--pink-500);
+}
+
+/* Contact form */
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 0.75em 1em;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #e0bcd5;
+  background: #fff;
+  font-family: "Degular", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  margin-top: 0;
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1em;
+  margin-bottom: 0.25em;
 }

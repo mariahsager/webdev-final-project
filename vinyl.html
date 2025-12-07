@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Vinyl Collection</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+		<header>
+			<div id="navbar-container"></div>
+		</header>
+	<div class="container">
+		<div id="vinyls" class="vinyls"></div>
+	</div>
+	<script type="module">
+		import { fetchVinylCollection } from './js/discogs.js';
+
+		async function renderVinyls() {
+			const vinylsContainer = document.getElementById('vinyls');
+			vinylsContainer.innerHTML = '<p>Loading...</p>';
+			const vinyls = await fetchVinylCollection();
+			if (!vinyls.length) {
+				vinylsContainer.innerHTML = '<p>No vinyls found or error fetching collection.</p>';
+				return;
+			}
+			vinylsContainer.innerHTML = '';
+			vinyls.forEach(vinyl => {
+				const vinylDiv = document.createElement('div');
+				vinylDiv.className = 'vinyl';
+				vinylDiv.innerHTML = `
+					<img src="${vinyl.image || ''}" alt="${vinyl.title}" />
+					<div class="vinyl__details">
+						<h2>${vinyl.title}</h2>
+						<p><strong>Artist:</strong> ${vinyl.artist}</p>
+						<p><strong>Label:</strong> ${vinyl.label}</p>
+						<p><strong>Year:</strong> ${vinyl.year}</p>
+					</div>
+				`;
+				vinylsContainer.appendChild(vinylDiv);
+			});
+		}
+		renderVinyls();
+	</script>
+		<footer>
+			<div id="footer-container"></div>
+		</footer>
+		<script>
+			fetch("navbar.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("navbar-container").innerHTML = data;
+				});
+			fetch("footer.html")
+				.then((response) => response.text())
+				.then((data) => {
+					document.getElementById("footer-container").innerHTML = data;
+				});
+		</script>
+	</body>
+</html>

@@ -247,3 +247,46 @@ footer {
   padding: 1.25rem 1rem;
   color: #6b4756;
 }
+
+/* Slight responsive spacing */
+@media (max-width: 640px) {
+  header {
+    padding: 1.5rem 0.75rem;
+  }
+  section {
+    margin: 1rem 0.75rem;
+    padding: 1rem;
+  }
+}
+
+
+/* Pink button utility */
+.btn-pink {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--pink-500), var(--pink-400));
+  color: #fff;
+  border: none;
+  padding: 0.5rem 0.9rem;
+  border-radius: 10px;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(255, 77, 166, 0.14);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  text-decoration: none;
+}
+
+.btn-pink:hover,
+.btn-pink:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(255, 77, 166, 0.18);
+}
+
+/* Change unordered list bullets to use the ✧ symbol (U+2727) */
+ul {
+  list-style-type: '\2727';
+}
+ul li {
+  padding-left: 0.3em;
+}
+ul li::marker {
+  color: var(--pink-500);
+}

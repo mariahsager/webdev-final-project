@@ -17,10 +17,48 @@
     <section>
       <h2>About Me</h2>
       <p>
-        Placeholder placeholder :)
+        Mariah is a detail-oriented software engineer with 2 years of experience
+        and a systematic approach to programming and problem-solving. She is
+        additionally passionate about documentation and improving developer
+        experience.
+        <br /><br />
+        Currently, she is pursuing her Master's degree in Computer Science at
+        Portland State University, where she plans to complete a thesis under
+        advisor <a href="https://www.pdx.edu/profile/ameeta-agrawal" target="_blank">Ameeta Agrawal</a>.
       </p>
     </section>
-    
+    <section>
+      <h2>Education</h2>
+      <ul>
+        <li>
+          B.S. in Computer Science, St. Edward's University, Austin, TX, 2021, <i>cum laude</i>
+        </li>
+        <li>
+          M.S. in Computer Science (in progress), Portland State University, Portland, OR
+        </li>
+      </ul>
+    </section>
+    <section>
+      <h2>Experience</h2>
+      <ul>
+        <li>
+          Consultant Software Developer, <a href="https://www.thoughtworks.com/" target="_blank">Thoughtworks</a>, 2023-2024
+        </li>
+        <li>
+          Consultant Graduate Software Developer, <a href="https://www.thoughtworks.com/" target="_blank">Thoughtworks</a>, 2022-2023
+        </li>
+      </ul>
+      <h3>Projects</h3>
+      <ul>
+        <li>
+          <a href="https://www.thoughtworks.com/en-us/insights/topic/open-source/complaint-manager" target="_blank">Complaint Manager</a>, add stuff here
+        </li>
+        <li>
+          <a href="https://department.va.gov/privacy/wp-content/uploads/sites/5/2023/05/FY23DigitalHealthPathwayforCareDiscoveryDHPCDPIA.pdf" target="_blank">Digital Health Pathway</a>, add stuff here
+        </li>
+      </ul>
+    </section>
+
     <footer>
       <div id="footer-container"></div>
     </footer>
@@ -37,10 +75,10 @@
         });
     </script>
     <script>
-      fetch('footer.html')
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('footer-container').innerHTML = data;
+      fetch("footer.html")
+        .then((response) => response.text())
+        .then((data) => {
+          document.getElementById("footer-container").innerHTML = data;
         });
     </script>
   </body>

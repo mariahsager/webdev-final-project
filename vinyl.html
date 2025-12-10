@@ -11,17 +11,19 @@
       <div id="navbar-container"></div>
     </header>
 
-  <div class="container">
-    <h2 style="text-align:center; margin-top:2rem;">My Vinyl Collection</h2>
-    <div id="vinyls" class="vinyls"></div>
-    <div style="text-align:center; margin: 2.5rem 0 1.5rem 0;">
-      <button id="scrollToTopBtn" class="btn-pink" type="button">Scroll to Top</button>
+    <div class="container">
+      <h2 style="text-align: center; margin-top: 2rem">My Vinyl Collection</h2>
+      <div id="vinyls" class="vinyls"></div>
+      <div style="text-align: center; margin: 2.5rem 0 1.5rem 0">
+        <button id="scrollToTopBtn" class="btn-pink" type="button">
+          Scroll to Top
+        </button>
+      </div>
     </div>
-  </div>
 
     <script type="module">
       import { fetchVinylCollection } from "./js/discogs.js";
-      import { truncateText } from "./js/script.js";
+      import { truncateText, loadNavbar, loadFooter } from "./js/script.js";
 
       async function renderVinyls() {
         const vinylsContainer = document.getElementById("vinyls");
@@ -41,45 +43,39 @@
           const label = `${truncatedTitle} – ${truncatedArtist}`;
           const url = vinyl.url || "";
           vinylDiv.innerHTML = `
-									<a href="${url}" target="_blank" rel="noopener noreferrer">
-										<img src="${vinyl.image || ""}" alt="${vinyl.title}" />
-										<svg class="vinyl-details" width="300" height="160" viewBox="0 0 300 160">
-											<defs>
-												<path id="curve" d="M50,150 A100,100 0 0,1 250,150" />
-											</defs>
-											<text width="300">
-												<textPath href="#curve" startOffset="0%" class="vinyl-title-artist">
-													${label}
-												</textPath>
-											</text>
-										</svg>
-									</a>
-								`;
+            <a href="${url}" target="_blank" rel="noopener noreferrer">
+              <img src="${vinyl.image || ""}" alt="${vinyl.title}" />
+              <svg class="vinyl-details" width="300" height="160" viewBox="0 0 300 160">
+                <defs>
+                  <path id="curve" d="M50,150 A100,100 0 0,1 250,150" />
+                </defs>
+                <text width="300">
+                  <textPath href="#curve" startOffset="0%" class="vinyl-title-artist">
+                    ${label}
+                  </textPath>
+                </text>
+              </svg>
+            </a>
+          `;
           vinylsContainer.appendChild(vinylDiv);
         });
       }
+
       renderVinyls();
-    const scrollToTopBtn = document.getElementById('scrollToTopBtn');
-    if (scrollToTopBtn) {
-      scrollToTopBtn.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+      if (scrollToTopBtn) {
+        scrollToTopBtn.addEventListener("click", () => {
+          window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+      }
+      window.addEventListener("DOMContentLoaded", () => {
+        loadNavbar();
+        loadFooter();
       });
-    }
-  </script>
+    </script>
     <footer>
       <div id="footer-container"></div>
     </footer>
-    <script>
-      fetch("navbar.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("navbar-container").innerHTML = data;
-        });
-      fetch("footer.html")
-        .then((response) => response.text())
-        .then((data) => {
-          document.getElementById("footer-container").innerHTML = data;
-        });
-    </script>
   </body>
 </html>

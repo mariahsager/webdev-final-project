@@ -106,9 +106,7 @@
 }
 
 /* Global styles */
-html,
-body {
-}
+
 body {
   margin: 0;
   font-family: "Degular", Inter, system-ui, -apple-system, "Segoe UI", Roboto,
@@ -125,6 +123,10 @@ body {
       )
       no-repeat fixed;
     background-size: 100% 100%;
+  }
+
+  a[href^="http"] {
+    cursor: alias;
   }
 
   /* Header */

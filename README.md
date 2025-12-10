@@ -1,8 +1,8 @@
 # CS-563 Final Project
 
-TODO: Description here
+For the final project for CS-563, I created a personal webpage as per the project instructions. The main area where I deviated into doing something extra is the page for my vinyl collection.
 
-The project can be seen live at https://mariahsager.com or, if it fails to load for some reason, `167.99.238.162`.
+The project can be seen live at https://mariahsager.com or, if it fails to load for some reason, http://167.99.238.162.
 
 ## Deploying locally
 
@@ -20,6 +20,16 @@ The project can be seen live at https://mariahsager.com or, if it fails to load 
 
 4. In a browser, visit `http://localhost:<port number>`. The port is likely to be `3000` or `8000`; it should specify in your terminal.
 
+### Troubleshooting
+
+#### Dependencies
+
+If, when following the above instructions for deployment, your terminal prompts you to install any dependencies, follow the instructions in the terminal.
+
+#### Issues with `vinyl.html`
+
+Should the vinyl page come up with an error such as "No vinyls found or error fetching collection", wait a few minutes and reload.
+
 ## Tutorials and resources used
 
 - [Discogs API and vinyl display](https://pixelswap.fr/entry/displaying-my-vinyl-collection-from-the-discogs-api/)
@@ -33,3 +43,4 @@ The project can be seen live at https://mariahsager.com or, if it fails to load 
 ## Additional notes
 
 - Any duplicate vinyls on the vinyl page are reflective of actual duplicate vinyls that I own. In most cases, if you follow the links by clicking on the vinyls, you will see that they actually link to separate releases.
+- The project instructions say to include links for each project listed as previous experience. I am unable to do this as sadly the projects I worked on while at Thoughtworks are now defunct and/or utilized private repositories.

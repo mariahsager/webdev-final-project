@@ -10,13 +10,13 @@ The project can be seen live at https://mariahsager.com or, if it fails to load 
 2. Open the project directory inside of your terminal.
 3. Choose one of the two following options:
 
-	a. **Python** – Enter the following command into your terminal:
-	
-	`python3 -m http.server`
-	
-	b. **Node.js** – Enter the following command into your terminal:
-	
-	`npx serve .`
+   a. **Python** – Enter the following command into your terminal:
+
+   `python3 -m http.server`
+
+   b. **Node.js** – Enter the following command into your terminal:
+
+   `npx serve .`
 
 4. In a browser, visit `http://localhost:<port number>`. The port is likely to be `3000` or `8000`; it should specify in your terminal.
 

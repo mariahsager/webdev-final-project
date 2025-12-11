@@ -17,16 +17,19 @@
   <header>
     <div id="navbar-container"></div>
   </header>
-
-  <div class="container">
-    <h2 style="text-align: center; margin-top: 2rem">My Vinyl Collection</h2>
-    <div id="vinyls" class="vinyls"></div>
-    <div style="text-align: center; margin: 2.5rem 0 1.5rem 0">
-      <button id="scrollToTopBtn" class="btn-pink" type="button">
-        Scroll to Top
-      </button>
+  <main id="main-content" tabindex="-1" role="main">
+    <div class="container">
+      <h2 style="text-align: center; margin-top: 2rem">
+        My Vinyl Collection
+      </h2>
+      <div id="vinyls" class="vinyls" aria-live="polite"></div>
+      <div style="text-align: center; margin: 2.5rem 0 1.5rem 0">
+        <button id="scrollToTopBtn" class="btn-pink" type="button">
+          Scroll to Top
+        </button>
+      </div>
     </div>
-  </div>
+  </main>
 
   <script type="module">
     import { fetchVinylCollection } from "./js/discogs.js";
